@@ -1,6 +1,8 @@
 import React from "react";
 import { Redirect, useParams } from "react-router-dom";
 import { Card, CardBody, CardTitle, CardText } from "reactstrap";
+import order_list from './orderList';
+
 
 function FoodItem({ items, cantFind }) {
   const { id } = useParams();
@@ -8,7 +10,9 @@ function FoodItem({ items, cantFind }) {
   let snack = items.find(snack => snack.id === id);
   if (!snack) return <Redirect to={cantFind} />;
 
-
+  const addToOrder = () => {
+    order_list.push({name: snack.name, id: snack.id})
+  }
   return (
     <section>
       <Card>
@@ -23,6 +27,7 @@ function FoodItem({ items, cantFind }) {
           <p>
             <b>Serve:</b> {snack.serve}
           </p>
+          <div className="w3-btn w3-ripple w3-border w3-round w3-white" onClick={addToOrder}>Add to order</div>
         </CardBody>
       </Card>
     </section>

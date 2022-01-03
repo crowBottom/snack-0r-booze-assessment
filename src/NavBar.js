@@ -2,8 +2,10 @@ import React from "react";
 import "./NavBar.css";
 import { NavLink } from "react-router-dom";
 import { Navbar, Nav, NavItem } from "reactstrap";
+import order_list from './orderList';
 
-function NavBar( {order} ) {
+function NavBar() {
+
   return (
     <div>
       <Navbar expand="md">
@@ -21,7 +23,7 @@ function NavBar( {order} ) {
           </NavItem>
 
           <NavItem>
-            <NavLink to="/order">My Order</NavLink>
+            <NavLink to="/myorder">My Order</NavLink>
           </NavItem>
         </Nav>
       </Navbar>

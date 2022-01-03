@@ -9,6 +9,7 @@ import FoodMenu from "./FoodMenu";
 import DrinkMenu from "./DrinkMenu";
 import Snack from "./FoodItem";
 import Drink from "./DrinkItem";
+import MyOrder from './MyOrder';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -56,6 +57,9 @@ function App() {
             </Route>
             <Route path="/drinks/:id">
               <Drink items={drinks} cantFind="/drinks" />
+            </Route>
+            <Route path="/myorder">
+              <MyOrder />
             </Route>
           </Switch>
         </main>
